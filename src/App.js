@@ -1,34 +1,34 @@
 import React, { useState } from 'react';
-import MyComponent from './MyComponet'
-import logo from './logo.svg';
 import './App.css';
+import logo from './logo.svg';
 
-function App() {
-  const [ count, setCount ] = useState(0)
+const App = () =>{
+    //const [name, setName] = useState('Lesly')
 
-  const addMount = () => {
-    setCount(count+1)
-  } 
+    const [contador, setContador] = useState(0)
 
-  const removeMount = () => {
-    setCount(count-1)
-  } 
+    const Sumar = () => {
+        setContador(contador+1)
+    }
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <MyComponent name="Johan"/>
-        <button onClick={addMount}>
-          +
-        </button>
-        <button onClick={removeMount}>
-          -
-        </button>
-        <h1>{count}</h1>
-      </header>
-    </div>
-  );
+    const Restar = () =>{
+        setContador(contador-1)
+    }
+
+    return(
+        <div className="App">
+            <div className="App-header">
+                <div className="App-logo">
+                    <img src={logo}></img>
+                    <div> {contador} </div>
+                    <button onClick={Sumar}> Sumar
+                    </button>
+                    <button onClick={Restar}> Restar
+                    </button>
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default App;
