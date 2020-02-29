@@ -1,31 +1,19 @@
 import React, { useState } from 'react';
 import './App.css';
 import logo from './logo.svg';
+import Contador from './components/Contador'
 
 const App = () =>{
     //const [name, setName] = useState('Lesly')
-
-    const [contador, setContador] = useState(0)
-
-    const Sumar = () => {
-        setContador(contador+1)
-    }
-
-    const Restar = () =>{
-        setContador(contador-1)
-    }
-
+    const name = 'Lesly'
+    const lasteName = 'Samaritano'
     return(
         <div className="App">
             <div className="App-header">
-                <div className="App-logo">
-                    <img src={logo}></img>
-                    <div> {contador} </div>
-                    <button onClick={Sumar}> Sumar
-                    </button>
-                    <button onClick={Restar}> Restar
-                    </button>
-                </div>
+            <img src={logo} className="App-logo" alt="logo"></img>  
+                    <Contador nameA={name} 
+                    lasteNameA={lasteName}/>
+                
             </div>
         </div>
     )
